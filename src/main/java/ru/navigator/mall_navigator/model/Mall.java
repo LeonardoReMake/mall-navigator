@@ -1,5 +1,8 @@
 package ru.navigator.mall_navigator.model;
 
+import net.sf.autodao.PersistentEntity;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -9,7 +12,7 @@ import javax.persistence.OneToMany;
 import java.util.List;
 
 @Entity
-public class Mall {
+public class Mall implements PersistentEntity<Long> {
 
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -18,7 +21,7 @@ public class Mall {
     @Column(unique = true)
     private String name;
 
-    @OneToMany(mappedBy = "mall")
+    @OneToMany(mappedBy = "mall", cascade = CascadeType.ALL)
     private List<Shop> shops;
 
     public Long getId() {
@@ -43,5 +46,10 @@ public class Mall {
 
     public void setShops(List<Shop> shops) {
         this.shops = shops;
+    }
+
+    @Override
+    public Long getPrimaryKey() {
+        return id;
     }
 }

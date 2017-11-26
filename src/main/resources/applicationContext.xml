@@ -13,7 +13,7 @@
 
     <context:component-scan base-package="ru.navigator.mall_navigator" />
 
-    <dao:hibernateScan base-package="ru.navigator.mall-navigator.dao" />
+    <dao:hibernateScan base-package="ru.navigator.mall_navigator.dao" />
 
     <tx:annotation-driven transaction-manager="transactionManager"/>
 
@@ -60,4 +60,6 @@
     <bean id="transactionManager" class="org.springframework.orm.hibernate5.HibernateTransactionManager">
         <property name="sessionFactory" ref="sessionFactory"/>
     </bean>
+
+    <bean id="getPathHandler" class="ru.navigator.mall_navigator.handlers.GetPathHandler" />
 </beans>

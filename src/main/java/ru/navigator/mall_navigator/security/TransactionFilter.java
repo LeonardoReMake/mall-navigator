@@ -1,4 +1,6 @@
-package ru.navigator.mall-navigator.security;
+package ru.navigator.mall_navigator.security;
+
+import javax.servlet.Filter;
 
 import org.springframework.transaction.annotation.Transactional;
 

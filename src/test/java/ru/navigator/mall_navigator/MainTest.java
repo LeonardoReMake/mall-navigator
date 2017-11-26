@@ -1,4 +1,6 @@
-package ru.navigator.mall-navigator;
+package ru.navigator.mall_navigator;
+
+import org.springframework.test.context.ContextConfiguration;
 
 import org.junit.Test;
 import org.junit.runner.RunWith;

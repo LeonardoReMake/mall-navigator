@@ -7,17 +7,14 @@
     <version>1.0-SNAPSHOT</version>
     <packaging>war</packaging>
 
-    <name>Project name</name>
-    <url>http://simplex-software.ru/</url>
+    <name>Mall Navigator</name>
 
     <properties>
-        <wicket.version>8.0.0-M7</wicket.version>
         <jetty9.version>9.4.5.v20170502</jetty9.version>
         <log4j.version>2.8.2</log4j.version>
         <junit.version>4.12</junit.version>
         <hibernate.version>5.1.6.Final</hibernate.version>
         <spring.version>4.3.8.RELEASE</spring.version>
-        <zk.version>8.0.2.2</zk.version>
         <springsecurity.version>4.2.3.RELEASE</springsecurity.version>
         <project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
         <!-- allowed values: R7, 1.0, 1.5, 2.0 or none -->
@@ -28,98 +25,6 @@
     </properties>
 
     <dependencies>
-
-        <!--ZK Framework-->
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zkbind</artifactId>
-            <version>${zk.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zul</artifactId>
-            <version>${zk.version}</version>
-
-            <exclusions>
-                <exclusion>
-                    <groupId>org.slf4j</groupId>
-                    <artifactId>slf4j-jdk14</artifactId>
-                </exclusion>
-            </exclusions>
-
-        </dependency>
-
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zkplus</artifactId>
-            <version>${zk.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.zkoss.zk</groupId>
-            <artifactId>zhtml</artifactId>
-            <version>${zk.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.zkoss.theme</groupId>
-            <artifactId>sapphire</artifactId>
-            <version>8.0.0</version>
-        </dependency>
-
-        <dependency>
-            <groupId>ru.simplex_software</groupId>
-            <artifactId>zkutils</artifactId>
-            <version>1.1</version>
-
-            <exclusions>
-                <exclusion>
-                    <groupId>org.zkoss.zk</groupId>
-                    <artifactId>zul</artifactId>
-                </exclusion>
-            </exclusions>
-
-        </dependency>
-
-        <!--  WICKET DEPENDENCIES -->
-        <dependency>
-            <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-core</artifactId>
-            <version>${wicket.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-extensions</artifactId>
-            <version>${wicket.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-spring</artifactId>
-            <version>${wicket.version}</version>
-            <!-- exclude spring framework that wicket pulls in -->
-            <exclusions>
-                <exclusion>
-                    <groupId>org.springframework</groupId>
-                    <artifactId>spring</artifactId>
-                </exclusion>
-            </exclusions>
-
-        </dependency>
-
-        <dependency>
-            <groupId>org.apache.wicket</groupId>
-            <artifactId>wicket-bean-validation</artifactId>
-            <version>${wicket.version}</version>
-        </dependency>
-
-        <dependency>
-            <groupId>net.sf.wicket-autodao</groupId>
-            <artifactId>wicket-autodao</artifactId>
-            <version>0.9</version>
-        </dependency>
 
         <!-- LOGGING -->
         <dependency>
@@ -364,20 +269,13 @@
             <artifactId>commons-lang</artifactId>
             <version>2.6</version>
         </dependency>
-
         <dependency>
-            <groupId>com.googlecode.wicket-jquery-ui</groupId>
-            <artifactId>wicket-jquery-ui</artifactId>
-            <version>${wicket.version}</version>
+            <groupId>net.sf.autodao</groupId>
+            <artifactId>autodao</artifactId>
+            <version>0.12</version>
         </dependency>
 
-        <dependency>
-            <groupId>com.googlecode.wicket-jquery-ui</groupId>
-            <artifactId>wicket-jquery-ui-core</artifactId>
-            <version>${wicket.version}</version>
-        </dependency>
     </dependencies>
-
 
     <build>
         <sourceDirectory>src/main/java</sourceDirectory>
@@ -487,6 +385,12 @@
             <id>development-mem</id>
             <properties>
                 <profile.selected>development-mem</profile.selected>
+            </properties>
+        </profile>
+        <profile>
+            <id>production</id>
+            <properties>
+                <profile.selected>production</profile.selected>
             </properties>
         </profile>
     </profiles>

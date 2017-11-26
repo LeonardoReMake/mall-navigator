@@ -19,8 +19,6 @@
 
     <bean id="transactionFilter" class="ru.navigator.mall_navigator.security.TransactionFilter" />
 
-    <bean class="ru.navigator.mall_navigator.web.WicketApplication" />
-
     <bean class="org.springframework.beans.factory.config.PropertyPlaceholderConfigurer">
         <property name="locations">
             <list>

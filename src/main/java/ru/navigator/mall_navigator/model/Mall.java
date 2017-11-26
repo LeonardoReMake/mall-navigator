@@ -10,6 +10,7 @@ import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.OneToMany;
 import java.util.List;
+import java.util.Set;
 
 @Entity
 public class Mall implements PersistentEntity<Long> {
@@ -23,6 +24,9 @@ public class Mall implements PersistentEntity<Long> {
 
     @OneToMany(mappedBy = "mall", cascade = CascadeType.ALL)
     private List<Shop> shops;
+
+    @OneToMany(mappedBy = "mall", cascade = CascadeType.ALL)
+    private Set<Point> points;
 
     public Long getId() {
         return id;
@@ -46,6 +50,14 @@ public class Mall implements PersistentEntity<Long> {
 
     public void setShops(List<Shop> shops) {
         this.shops = shops;
+    }
+
+    public Set<Point> getPoints() {
+        return points;
+    }
+
+    public void setPoints(Set<Point> points) {
+        this.points = points;
     }
 
     @Override

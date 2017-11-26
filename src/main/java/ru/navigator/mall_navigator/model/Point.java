@@ -24,11 +24,20 @@ public class Point implements PersistentEntity<Long> {
 
     private double y;
 
+    @ManyToOne
+    private Mall mall;
+
     public Point() {}
 
     public Point(double x, double y) {
         this.x = x;
         this.y = y;
+    }
+
+    public Point(double x, double y, Mall mall) {
+        this.x = x;
+        this.y = y;
+        this.mall = mall;
     }
 
     public Long getId() {
@@ -53,6 +62,14 @@ public class Point implements PersistentEntity<Long> {
 
     public void setY(double y) {
         this.y = y;
+    }
+
+    public Mall getMall() {
+        return mall;
+    }
+
+    public void setMall(Mall mall) {
+        this.mall = mall;
     }
 
     @Override

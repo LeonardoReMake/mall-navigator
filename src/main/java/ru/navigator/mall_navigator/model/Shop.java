@@ -2,6 +2,7 @@ package ru.navigator.mall_navigator.model;
 
 import net.sf.autodao.PersistentEntity;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
@@ -23,7 +24,7 @@ public class Shop implements PersistentEntity<Long> {
     @ManyToOne
     private Mall mall;
 
-    @OneToOne
+    @OneToOne(cascade = CascadeType.ALL)
     private Point relatedPoint;
 
     public Shop() {}

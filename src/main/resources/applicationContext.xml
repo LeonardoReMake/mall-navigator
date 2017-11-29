@@ -62,4 +62,6 @@
     </bean>
 
     <bean id="getPathHandler" class="ru.navigator.mall_navigator.handlers.GetPathHandler" />
+
+    <bean id="getInitialDataHandler" class="ru.navigator.mall_navigator.handlers.GetInitialDataHandler" />
 </beans>

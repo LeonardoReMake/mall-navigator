@@ -49,4 +49,14 @@
         <url-pattern>/path</url-pattern>
     </servlet-mapping>
 
+    <servlet>
+        <servlet-name>getInitialDataHandler</servlet-name>
+        <servlet-class>org.springframework.web.context.support.HttpRequestHandlerServlet</servlet-class>
+    </servlet>
+
+    <servlet-mapping>
+        <servlet-name>getInitialDataHandler</servlet-name>
+        <url-pattern>/fetchData</url-pattern>
+    </servlet-mapping>
+
 </web-app>

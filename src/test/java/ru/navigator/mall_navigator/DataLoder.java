@@ -39,7 +39,7 @@ public class DataLoder {
     @Rollback(value = false)
     public void loadTestData() {
         Mall mall = new Mall();
-        mall.setName("Авиапарк");
+        mall.setName("Aviapark");
 
         double[] x = {1., 2., 3., 4.};
         double[] y = {1., 2., 3., 4.};
